@@ -1,0 +1,21 @@
+Classification report for final AI text classifier: LogisticRegression_GridSearchCV
+
+              precision    recall  f1-score   support
+
+       cs.AI       0.45      0.51      0.48       394
+       cs.CL       0.75      0.72      0.73       690
+       cs.CV       0.92      0.89      0.90       845
+       cs.LG       0.75      0.77      0.76       694
+       cs.SE       0.92      0.89      0.91       742
+
+    accuracy                           0.79      3365
+   macro avg       0.76      0.76      0.76      3365
+weighted avg       0.79      0.79      0.79      3365
+
+
+Model metrics:
+                          model  accuracy  precision_macro  recall_macro  f1_macro
+LogisticRegression_GridSearchCV  0.786330         0.755991      0.756042  0.755544
+             LogisticRegression  0.784250         0.756472      0.756055  0.755393
+                      LinearSVC  0.775037         0.737884      0.737612  0.737690
+                  MultinomialNB  0.754235         0.719853      0.702095  0.697074

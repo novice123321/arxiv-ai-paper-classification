@@ -1,0 +1,13 @@
+EDA summary for five-class AI paper classification
+Total records used for AI classification: 16823
+Target categories: cs.AI, cs.LG, cs.CV, cs.CL, cs.SE
+Number of target categories: 5
+Most frequent target category: cs.CV
+
+Category counts:
+primary_category
+cs.AI    1969
+cs.LG    3468
+cs.CV    4224
+cs.CL    3450
+cs.SE    3712

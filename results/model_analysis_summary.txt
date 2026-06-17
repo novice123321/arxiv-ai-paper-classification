@@ -1,0 +1,37 @@
+AI text classification model analysis summary
+Best model on the test set: LogisticRegression_GridSearchCV
+Best test accuracy: 0.7863
+Best test F1 macro: 0.7555
+
+GridSearchCV setting:
+{'model__C': 1.2, 'preprocess__text__max_features': 20000, 'preprocess__text__ngram_range': (1, 1)}
+Best cross-validation F1 macro: 0.7529
+
+Comparison between default LogisticRegression and tuned LogisticRegression:
+Default LogisticRegression F1 macro: 0.7554
+GridSearchCV LogisticRegression F1 macro: 0.7555
+F1 macro difference after tuning: +0.0002
+
+Interpretation: GridSearchCV improves the held-out test F1 macro, so the tuned LogisticRegression is more suitable as the final model.
+
+
+Feature ablation analysis for tuned LogisticRegression:
+
+The all-feature model uses title+summary text and all six numeric auxiliary features. A negative delta_vs_all means performance decreases after removing that feature group.
+               experiment                                                     description  f1_macro  delta_vs_all
+             all_features      title+summary text plus all six numeric auxiliary features  0.755544      0.000000
+                text_only                         only title+summary TF-IDF text features  0.755395     -0.000149
+numeric_only_text_removed only six numeric auxiliary features, title+summary text removed  0.417484     -0.338060
+     without_title_length    title+summary text plus numeric features except title_length  0.758026      0.002482
+   without_summary_length  title+summary text plus numeric features except summary_length  0.757834      0.002290
+     without_author_count    title+summary text plus numeric features except author_count  0.757223      0.001679
+   without_category_count  title+summary text plus numeric features except category_count  0.758536      0.002992
+   without_published_year  title+summary text plus numeric features except published_year  0.753941     -0.001603
+  without_published_month title+summary text plus numeric features except published_month  0.754591     -0.000953
+
+All model metrics:
+                          model  accuracy  precision_macro  recall_macro  f1_macro
+LogisticRegression_GridSearchCV  0.786330         0.755991      0.756042  0.755544
+             LogisticRegression  0.784250         0.756472      0.756055  0.755393
+                      LinearSVC  0.775037         0.737884      0.737612  0.737690
+                  MultinomialNB  0.754235         0.719853      0.702095  0.697074

@@ -1,0 +1,3 @@
+Best parameters from GridSearchCV
+{'model__C': 1.2, 'preprocess__text__max_features': 20000, 'preprocess__text__ngram_range': (1, 1)}
+Best cross-validation f1_macro: 0.7529

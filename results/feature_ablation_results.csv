@@ -1,0 +1,10 @@
+﻿experiment,description,f1_macro,delta_vs_all
+all_features,title+summary text plus all six numeric auxiliary features,0.7555440500908674,0.0
+text_only,only title+summary TF-IDF text features,0.7553951862784836,-0.00014886381238388147
+numeric_only_text_removed,"only six numeric auxiliary features, title+summary text removed",0.4174842151892742,-0.33805983490159325
+without_title_length,title+summary text plus numeric features except title_length,0.7580258922095255,0.0024818421186580952
+without_summary_length,title+summary text plus numeric features except summary_length,0.7578344829651836,0.002290432874316184
+without_author_count,title+summary text plus numeric features except author_count,0.7572228327761981,0.0016787826853306154
+without_category_count,title+summary text plus numeric features except category_count,0.7585357293590287,0.0029916792681612403
+without_published_year,title+summary text plus numeric features except published_year,0.7539407286764372,-0.0016033214144302033
+without_published_month,title+summary text plus numeric features except published_month,0.7545914498461228,-0.0009526002447446391
