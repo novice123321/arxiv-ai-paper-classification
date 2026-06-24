@@ -1,5 +1,3 @@
-arxiv-ai-paper-classification
-
 1. 项目简介
 
 本项目基于 arXiv 计算机领域论文数据，完成论文研究方向自动分类任务。项目通过 arXiv API 获取论文标题、摘要、类别、作者和发布时间等信息，并利用 TF-IDF 方法将论文文本转换为高维稀疏特征。实验比较了 MultinomialNB、LogisticRegression、LinearSVC 和 LogisticRegression_GridSearchCV 等机器学习模型，并使用 Accuracy、Precision macro、Recall macro 和 F1 macro 对模型性能进行评估。
@@ -7,30 +5,7 @@ arxiv-ai-paper-classification
 本项目最终选择 LogisticRegression_GridSearchCV 作为最优模型，对 cs.AI、cs.LG、cs.CV、cs.CL 和 cs.SE 五类 arXiv 论文进行研究方向分类。
 
 2. 项目结构
-
-arxiv-ai-paper-classification/
-├── 01_crawl_arxiv.py              # 从 arXiv API 爬取论文原始数据
-├── 02_clean_data.py               # 数据清洗、字段整理与特征构造
-├── 03_modeling.py                 # 模型训练、参数调优、评估与可视化分析
-├── data/                          # 数据文件夹
-│   └── .gitkeep
-├── figures/                       # 实验图表输出文件夹
-│   ├── category_distribution.png
-│   ├── model_metrics_bar.png
-│   ├── gridsearch_heatmap.png
-│   ├── gridsearch_c_curve.png
-│   ├── learning_curve.png
-│   ├── confusion_matrix.png
-│   └── feature_ablation_impact.png
-├── results/                       # 实验结果输出文件夹
-│   ├── classification_report.txt
-│   ├── model_metrics.csv
-│   ├── best_model_params.txt
-│   ├── gridsearch_results.csv
-│   ├── feature_ablation_results.csv
-│   └── model_analysis_summary.txt
-├── .gitignore
-└── README.md
+<img width="491" height="467" alt="image" src="https://github.com/user-attachments/assets/7a5c8e21-0c89-4529-9170-68643e961f96" />
 
 3. 环境配置
 
@@ -105,7 +80,7 @@ published_month   # 发布月份
 
 第四步：训练模型并生成实验结果
 
-python 04_modeling.py
+python 03_modeling.py
 
 该脚本会完成以下任务：
 
@@ -160,10 +135,10 @@ LogisticRegression_GridSearchCV：
 pip install requests lxml pandas numpy matplotlib scikit-learn
 python 01_crawl_arxiv.py
 python 02_clean_data.py
-python 04_modeling.py
+python 03_modeling.py
 
 若不重新爬取完整数据，也可直接查看仓库中的 figures/ 和 results/ 文件夹，其中保存了本次实验生成的主要图表和模型结果。
 
 10. 项目说明
 
-本项目为人工智能课程论文配套代码。项目代码已上传至 GitHub 仓库，便于查看源码、运行步骤和实验结果。源码不作为论文附录提交，实验结果和运行说明均通过本 README 文件进行说明。
+本项目为人工智能课程论文配套代码。项目代码已上传至 GitHub 仓库，便于查看源码、运行步骤和实验结果。实验结果和运行说明均通过本 README 文件进行说明。
